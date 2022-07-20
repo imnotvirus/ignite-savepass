@@ -91,7 +91,7 @@ export function RegisterLoginData() {
             name="service_name"
             error={
               // Replace here with real content
-              String(errors.service_name?.message)
+              errors.service_name && String(errors.service_name?.message)
             }
             control={control}
             autoCapitalize="sentences"
@@ -103,7 +103,7 @@ export function RegisterLoginData() {
             name="email"
             error={
               // Replace here with real content
-              String(errors.email?.message)
+              errors.email && String(errors.email?.message)
             }
             control={control}
             autoCorrect={false}
@@ -116,7 +116,7 @@ export function RegisterLoginData() {
             name="password"
             error={
               // Replace here with real content
-              String(errors.password?.message)
+              errors.password && String(errors.password?.message)
             }
             control={control}
             secureTextEntry
@@ -127,7 +127,7 @@ export function RegisterLoginData() {
               marginTop: RFValue(8),
             }}
             title="Salvar"
-            onPress={handleSubmit(handleRegister)}
+            onPress={handleSubmit(handleRegister as any)}
           />
         </Form>
       </Container>
